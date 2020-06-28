@@ -1,0 +1,96 @@
+.FormsWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.FormsWrapper > div {
+  flex-basis: 60%;
+  padding: 10px 20px 20px 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+.Form h2 {
+  /* background-color: #2b2b2b; */
+  color: #2b2b2b;
+  padding: 10px;
+  padding-left: 0px;
+}
+.Form form {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Form form > input:not([type="submit"]),
+.Form form > select {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.Form textarea {
+  padding: 10px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.Form form > div {
+  margin-bottom: 5px;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Form form div > input:not([type="submit"]),
+.Form form div > select {
+  flex-basis: 49%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.Form form input[type="file"] {
+  width: 49%;
+}
+.Form input[type="submit"] {
+  /* width: 300px; */
+  /* align-self: flex-end; */
+  padding: 10px;
+  color: #2b2b2b;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Form input[type="submit"]:hover {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+.display {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ffffce;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.display > div {
+  flex-basis: 33%;
+}
+
+.display div img {
+  width: 100%;
+}
+
+.display button {
+  align-self: center;
+}
