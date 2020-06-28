@@ -7,14 +7,23 @@ let actions = {};
 export const useStore = ( shouldListen = true ) => {
     const setState = useState(globalState)[1];
     
+    // Type Of actions[actionIdentifier] is = undefined
     const dispatch = (actionIdentifier, payload) => {
-        const newState = actions[actionIdentifier](globalState, payload);
-        globalState = { ...globalState, ...newState };
-
-        for(const listener of listeners) {
-            listener(globalState);
+        console.log("Type Of actions[actionIdentifier] is = " + typeof actions[actionIdentifier]);
+        if(actions[actionIdentifier]) {
+            const newState = actions[actionIdentifier](globalState, payload);
+            globalState = { ...globalState, ...newState };
+    
+            for(const listener of listeners) {
+                listener(globalState);
+            }
+        } else {
+            console.log("========== \n ============= ");
+            console.log("Type Of actions[actionIdentifier] is = " + typeof actions[actionIdentifier]);
+            console.log("AGAIN");
         }
     }
+
     useEffect(() => {
         if(shouldListen) {
             listeners.push(setState);
