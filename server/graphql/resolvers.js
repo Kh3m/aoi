@@ -8,6 +8,12 @@ const userResolvers = {
     getUser: controllers.user.getUser
 }
 
+// product resolvers 
+const productResolvers = {
+    createProduct: controllers.product.createProduct
+}
+
 module.exports = {
-    ...userResolvers
+    ...userResolvers,
+    ...productResolvers
 }
