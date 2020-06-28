@@ -1,0 +1,41 @@
+.sideBar {
+  width: 20%;
+  height: 80vh;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  padding: 50px 10px 50px 0px;
+  background-color: #fff;
+  z-index: 20;
+}
+
+.sideNav li {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+.sideNav img {
+  width: 20px;
+  height: 20px;
+}
+.sideNav li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px;
+  display: block;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.sideNav li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.sideActive {
+  background-color: #e2effe;
+}
+.sideActive a {
+  color: #006ff6 !important;
+}

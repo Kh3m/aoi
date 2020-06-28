@@ -1,0 +1,34 @@
+.toolBar {
+  width: 100%;
+  height: 64px;
+  padding: 0px 50px;
+  display: flex;
+  background-color: #334b82;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logoWrapper {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav {
+  display: flex;
+}
+
+.Nav ul {
+  display: flex;
+  align-items: center;
+}
+.Nav ul li {
+  padding: 0px 20px;
+}
+
+.Nav a {
+  color: #ececec;
+}

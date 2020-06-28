@@ -8,29 +8,29 @@ const indexPage = () => {
     products: [
       {
         title: "Running Shoes",
-        image: "/images/running.jpg"
+        image: "/images/running.jpg",
       },
       {
         title: "Women Boots",
-        image: "/images/nike.jpg"
+        image: "/images/nike.jpg",
       },
       {
         title: "Kids Footwear",
-        image: "/images/sandal.jpg"
+        image: "/images/sandal.jpg",
       },
       {
         title: "Women Mules",
-        image: "/images/mules.jpg"
+        image: "/images/mules.jpg",
       },
       {
         title: "Men Sandals",
-        image: "/images/sandals.jpg"
+        image: "/images/sandals.jpg",
       },
       {
         title: "Men Boots",
-        image: "/images/nike2.jpg"
-      }
-    ]
+        image: "/images/nike2.jpg",
+      },
+    ],
   };
 
   const favoriteProducts = {
@@ -40,51 +40,51 @@ const indexPage = () => {
         title: "Our Comfeist Footwear",
         image: "/images/comfeist.jpg",
         caption: "Enjoy popular styles that looks and feel good!",
-        explore: "Explore Comfort Shoes"
+        explore: "Explore Comfort Shoes",
       },
       {
         title: "Slide Sandals",
         image: "/images/slidesandals.jpg",
         caption: "On-trend styles that truly let you feel relax!",
-        explore: "Explore Slide Sandals"
+        explore: "Explore Slide Sandals",
       },
 
       {
         title: "Sandals for Kids",
         image: "/images/sandalkids.jpg",
         caption: "Perfect for backyard adventures and playtime!",
-        explore: "Explore Kids Sandals"
-      }
-    ]
+        explore: "Explore Kids Sandals",
+      },
+    ],
   };
   const brandHeaders = {
     title: "Trending Brands",
     products: [
       {
         title: "Clarks",
-        image: "/images/headers/clarks.jpg"
+        image: "/images/headers/clarks.jpg",
       },
       {
         title: "Nike",
-        image: "/images/headers/nike.jpg"
+        image: "/images/headers/nike.jpg",
       },
       {
         title: "Nike Kids",
-        image: "/images/headers/nikekids.jpg"
+        image: "/images/headers/nikekids.jpg",
       },
       {
         title: "Converse",
-        image: "/images/headers/converse.jpg"
+        image: "/images/headers/converse.jpg",
       },
       {
         title: "UGG",
-        image: "/images/headers/ugg.jpg"
+        image: "/images/headers/ugg.jpg",
       },
       {
         title: "Brooks",
-        image: "/images/headers/brooks.jpg"
-      }
-    ]
+        image: "/images/headers/brooks.jpg",
+      },
+    ],
   };
 
   return (
