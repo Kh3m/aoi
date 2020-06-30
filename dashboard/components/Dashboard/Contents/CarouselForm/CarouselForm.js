@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import classes from "./CarouselForm.module.css";
 const carouselForm = () => {
+    const [selectedCarousel, setSelectedCarousel] = useState(null);
+
+
   const carousels = [
     {
       image: "/images/heros/hero.jpg",
@@ -24,6 +27,10 @@ const carouselForm = () => {
       body: "Get yours with just a few clicks",
     },
   ];
+
+  const carouselSelectHandler = (index) => {
+        
+  }
 
   return (
     <div className={classes.FormsWrapper}>
