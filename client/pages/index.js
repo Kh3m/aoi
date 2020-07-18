@@ -4,56 +4,85 @@ import ProductsCard from "../components/productsCard";
 
 const indexPage = () => {
   const popularProducts = {
-    title: "View Popular Categories",
+    title: "Shoes Reviews",
     products: [
       {
-        title: "Running Shoes",
-        image: "/images/running.jpg",
+        image: "/images/1.jpg",
       },
       {
-        title: "Women Boots",
-        image: "/images/nike.jpg",
+        image: "/images/2.jpg",
       },
       {
-        title: "Kids Footwear",
-        image: "/images/sandal.jpg",
+        image: "/images/3.jpg",
       },
       {
-        title: "Women Mules",
-        image: "/images/mules.jpg",
+        image: "/images/4.jpg",
       },
       {
-        title: "Men Sandals",
-        image: "/images/sandals.jpg",
-      },
-      {
-        title: "Men Boots",
-        image: "/images/nike2.jpg",
+        image: "/images/5.jpg",
       },
     ],
   };
 
   const favoriteProducts = {
-    title: "Footwear Favorites",
+    title: "Featured Daily Deals",
     products: [
       {
         title: "Our Comfeist Footwear",
-        image: "/images/comfeist.jpg",
-        caption: "Enjoy popular styles that looks and feel good!",
-        explore: "Explore Comfort Shoes",
+        image: "/images/fdd1.jpg",
+        price: "98",
+        offPrice: "159",
       },
       {
         title: "Slide Sandals",
-        image: "/images/slidesandals.jpg",
-        caption: "On-trend styles that truly let you feel relax!",
-        explore: "Explore Slide Sandals",
+        image: "/images/fdd2.jpg",
+        price: "89",
+        offPrice: "159",
       },
 
       {
         title: "Sandals for Kids",
-        image: "/images/sandalkids.jpg",
-        caption: "Perfect for backyard adventures and playtime!",
-        explore: "Explore Kids Sandals",
+        image: "/images/fdd3.jpg",
+        price: "97",
+        offPrice: "160",
+      },
+      {
+        title: "Our Comfeist Footwear",
+        image: "/images/fdd4.jpg",
+        price: "98",
+        offPrice: "159",
+      },
+      {
+        title: "Slide Sandals",
+        image: "/images/fdd5.jpg",
+        price: "89",
+        offPrice: "159",
+      },
+
+      {
+        title: "Sandals for Kids",
+        image: "/images/fdd6.jpg",
+        price: "97",
+        offPrice: "160",
+      },
+      {
+        title: "Our Comfeist Footwear",
+        image: "/images/fdd7.jpg",
+        price: "98",
+        offPrice: "159",
+      },
+      {
+        title: "Slide Sandals",
+        image: "/images/fdd8.jpg",
+        price: "89",
+        offPrice: "159",
+      },
+
+      {
+        title: "Sandals for Kids",
+        image: "/images/fdd9.jpg",
+        price: "97",
+        offPrice: "160",
       },
     ],
   };
@@ -92,7 +121,7 @@ const indexPage = () => {
       <HeroBox />
       <ProductsCard
         productsList={popularProducts}
-        flexBasis="16%"
+        flexBasis="20%"
         shadow={true}
         type="small"
       />

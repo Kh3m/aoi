@@ -15,7 +15,8 @@ const layout = (props) => {
           padding: 0;
           font-family: "Open Sans", san-serif;
           font-size: 16px;
-          color: #0e2a47;
+          color: #18192b;
+          width: 100%;
         }
 
         h1,

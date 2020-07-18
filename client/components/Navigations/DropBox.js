@@ -1,12 +1,11 @@
 import React from "react";
-import Category from "./Category";
+import Link from "next/link";
 
-const dropBox = props => {
-  const categories = [...props.categories];
-
-  // Checking to see if the categories has morethan 1 colums
+const dropBox = (props) => {
+  const lists = [...props.list];
+  // Checking to see if the list has morethan 1 colums
   let columnCategory = false;
-  if (categories.length === 1) columnCategory = true;
+  if (lists.length === 1) columnCategory = true;
 
   let classList = ["drop-box"];
 
@@ -17,34 +16,48 @@ const dropBox = props => {
   }
   return (
     <div className={classList.join(" ")}>
-      {categories.map((category, index) => (
-        <Category
-          key={index}
-          category={category}
-          columnCategory={columnCategory}
-        />
-      ))}
+      <ul className="nav-wrapper">
+        {lists.map((list, index) => (
+          <li>
+            <Link href={"/products"}>
+              <a>{list}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
       <style jsx>{`
         .drop-box {
-          width: 700px;
-          min-height: 250px;
+          width: 100%;
           padding: 50px;
           background-color: #eee;
           position: absolute;
-          top: 65px;
+          top: 115px;
           left: 0px;
           z-index: 5;
-          transition: flex 10s ease;
-          justify-content: space-between;
           background-color: #fff;
-          box-shadow: 0px 0px 5px #575757;
+          // box-shadow: 0px 0px 5px #575757;
         }
         .show {
           display: flex;
+          height: 300px;
+          justify-content: center;
         }
 
         .hidden {
           display: none;
+        }
+
+        .nav-wrapper {
+          display: flex;
+          min-width: 50%;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 100%;
+          padding: 2px;
+        }
+        .nav-wrapper li {
+          padding: 5px 20px;
         }
       `}</style>
     </div>

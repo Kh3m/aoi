@@ -24,7 +24,7 @@ const account = (props) => {
       <style jsx>{`
         .Account {
           position: absolute;
-          top: calc(50% - 250px);
+          top: calc(50% - 10px);
           left: calc(50% - 220px);
           width: 440px;
           height: 500px;

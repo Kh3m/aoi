@@ -13,7 +13,7 @@ const searchBox = () => {
 
       <style jsx>{`
         .search-box {
-          flex-basis: 50%;
+          flex-basis: 30%;
         }
         .search-form {
           width: 100%;
@@ -35,7 +35,7 @@ const searchBox = () => {
         }
 
         .search-form input[type="submit"] {
-          width: 200px;
+          width: 100px;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
           background-color: #0654b3;

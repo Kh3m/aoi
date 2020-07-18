@@ -12,183 +12,83 @@ const navigations = () => {
   const state = useStore()[0];
   const { isAuth, data } = state.auth;
 
-  const loginStatus = isAuth ? <span> {data.fullName.split(" ")[0]} </span> : <span>Sign in / Register</span>;
+  const loginStatus = isAuth ? (
+    <span> {data.fullName.split(" ")[0]} </span>
+  ) : (
+    <span>Sign in / Register</span>
+  );
 
   const navs = [
-    //Women Navigation list
-    {
-      title: "Women",
-      categories: [
-        {
-          title: "Shoes",
-          list: [
-            "Sandals",
-            "Sneakers",
-            "Flats",
-            "Mules",
-            "Heals & Pumps",
-            "Boots & Booties",
-            "Clogs",
-            "Slippers",
-            "View all",
-          ],
-        },
-
-        {
-          title: "Activities",
-          list: [
-            "Comfort Shop",
-            "Run Shop",
-            "Spring Trend",
-            "Outdoor",
-            "Walking",
-            "Athletic",
-            "Food Health & Wellness",
-            "Casual",
-            "Dress/Evening",
-            "Wide Shoes",
-            "Narrow Shoes",
-          ],
-        },
-
-        {
-          title: "Clothing & More",
-          list: [
-            "Handbags & Purses",
-            "Tops",
-            "Hats",
-            "Dresses",
-            "Skirts",
-            "Socks",
-            "Athletic",
-            "Rain Gear",
-            "Coats & Jackets",
-            "View all",
-          ],
-        },
-      ],
-    },
     //Men Navigation list
     {
       title: "Men",
-      categories: [
-        {
-          title: "Shoes",
-          list: [
-            "Sandals",
-            "Sneakers",
-            "Loafers",
-            "Boat Shoes",
-            "Oxfords",
-            "Boots & Chukkas",
-            "Slip-Ons",
-            "Slippers",
-            "View all",
-          ],
-        },
-
-        {
-          title: "Activities",
-          list: [
-            "Run Shop",
-            "Spring Trend",
-            "Outdoor",
-            "Walking",
-            "Athletic",
-            "Food Health & Wellness",
-            "Casual",
-            "Dress/Evening",
-            "Work",
-            "Wide Shoes",
-            "Narrow Shoes",
-          ],
-        },
-
-        {
-          title: "Clothing & More",
-          list: [
-            "Backpacks",
-            "Tops",
-            "Hats",
-            "Dresses",
-            "Shirts & T-Shirts",
-            "Shorts & Boardshorts",
-            "Pants",
-            "Socks",
-            "Athletic",
-            "Rain Gear",
-            "Coats & Jackets",
-            "View all",
-          ],
-        },
+      list: [
+        "Sandals",
+        "Sneakers",
+        "Loafers",
+        "Boat Shoes",
+        "Oxfords",
+        "Boots & Chukkas",
+        "Slip-Ons",
+        "Slippers",
+        "Run Shop",
+        "Spring Trend",
+        "Outdoor",
+        "Walking",
+        "Athletic",
+        "Food Health & Wellness",
+        "Casual",
+        "Dress/Evening",
       ],
     },
-
+    //Women Navigation list
+    {
+      title: "Women",
+      list: [
+        "Sandals",
+        "Sneakers",
+        "Flats",
+        "Mules",
+        "Heals & Pumps",
+        "Boots & Booties",
+        "Clogs",
+        "Slippers",
+        "Comfort Shop",
+        "Run Shop",
+        "Spring Trend",
+        "Outdoor",
+        "Walking",
+        "Athletic",
+        "Food Health & Wellness",
+        "Casual",
+      ],
+    },
     //Kids Navigation list
     {
       title: "Kids",
-      categories: [
-        {
-          title: "Girls",
-          list: [
-            "Sandals",
-            "Swimwear",
-            "Sneaker & Athletic Shoes",
-            "Dresses",
-            "Flats",
-            "Jumpsuits & Rompers",
-            "Shirts & Tops",
-            "Shorts",
-            "Sleepwear",
-            "Slippers",
-            "View all",
-          ],
-        },
-
-        {
-          title: "Boys",
-          list: [
-            "Sneaker & Athletic Shoes",
-            "Swimwear",
-            "Sandals",
-            "Shirts & Tops",
-            "Boat Shoes",
-            "Shorts",
-            "Pants",
-            "Loafers",
-            "Sleepwear",
-            "Slippers",
-            "Jumpsuits & Rompers",
-            "View all",
-          ],
-        },
-
-        {
-          title: "All kids",
-          list: [
-            "Juniors",
-            "Baby & Toddler",
-            "Accessories",
-            "Kid's Sports",
-            "Backpack & Bags",
-            "Sunglasses",
-            "Sale",
-            "New Arrivals",
-            "View all",
-          ],
-        },
+      list: [
+        "Sandals",
+        "Swimwear",
+        "Sneaker & Athletic Shoes",
+        "Dresses",
+        "Flats",
+        "Jumpsuits & Rompers",
+        "Shirts & Tops",
+        "Shorts",
+        "Sleepwear",
+        "Slippers",
+        "Sneaker & Athletic Shoes",
+        "Swimwear",
+        "Sandals",
+        "Shirts & Tops",
+        "Boat Shoes",
       ],
     },
 
     //Men Navigation list
     {
       title: "Brands",
-      categories: [
-        {
-          title: "Brands Index",
-          list: [...Array(26)].map((_, i) => String.fromCharCode(i + 65)),
-        },
-      ],
+      list: [...Array(26)].map((_, i) => String.fromCharCode(i + 65)),
     },
   ];
 
@@ -202,17 +102,17 @@ const navigations = () => {
         {navs.map((nav, index) => (
           <Navigation key={index} target={nav} />
         ))}
-        <Spacer />
+        {/* <Spacer />
         <li onClick={showAccountHandler} id="accountBtn">
           {loginStatus}
-        </li>
+        </li> */}
       </ul>
       <Backdrop show={showAccount} clicked={showAccountHandler} />
       <Account show={showAccount} />
       <style jsx>{`
         .nav-wrapper {
-          width: 100%;
-          background-color: #eee;
+          // width: 100%;
+          // background-color: #eee;
           height: 55px;
           display: flex;
           align-items: center;

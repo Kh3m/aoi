@@ -7,7 +7,6 @@ import configureAuth from "../hooks/store/reducers/auth";
 import Persists from "../container/Persists/Persists";
 
 class MyApp extends App {
-  
   render() {
     const { Component, pageProps } = this.props;
     configureAuth();
@@ -16,11 +15,12 @@ class MyApp extends App {
       <Persists>
         <Layout>
           <Header />
-          <Component {...pageProps} />
+          <main style={{ marginTop: "160px" }}>
+            <Component {...pageProps} />
+          </main>
           <Footer />
-        </Layout>       
+        </Layout>
       </Persists>
-
     );
   }
 }

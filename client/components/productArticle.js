@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-const productArticle = props => {
+const productArticle = (props) => {
   let article = null;
 
   switch (props.type) {
@@ -37,16 +37,14 @@ const productArticle = props => {
     case "large":
       article = (
         <div className="product-wrapper">
-          <Link href="#">
+          <Link href="/product">
             <a>
               <div className="product-image-wrapper">
                 <img src={props.product.image} />
               </div>
-              <h3> {props.product.title}</h3>
-              <p>{props.product.caption}</p>
-              <div>
-                <h3 className="explore">{props.product.explore}</h3>
-              </div>
+              <h5> {props.product.title}</h5>
+              <h3 className="price">Gifting Sale: {props.product.price} USD</h3>
+              <h4 className="offPrice">{props.product.offPrice} USD</h4>
             </a>
           </Link>
           <style jsx>{`
@@ -83,6 +81,15 @@ const productArticle = props => {
         height: 100px;
         background-color: black;
       }
+      .price{
+        color: red;
+        font-style: italic;
+      }
+      .offPrice{
+        text-decoration: line-through;
+        font-style: italic;
+        color: gray;
+      }
     
         a{
           display: flex;
@@ -94,7 +101,7 @@ const productArticle = props => {
         }
         .link{ text-align: center;}
         a:hover .link{
-            border-bottom: 1px solid black;
+            // border-bottom: 1px solid black;
         }
 
         .explore{
@@ -104,14 +111,14 @@ const productArticle = props => {
       }
       a:hover .explore{
           color: #0654b3;
-          border-bottom: 1px solid #0654b3;
+          // border-bottom: 1px solid #0654b3;
       }
       .product-image-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        box-shadow: 0px 0px 2px #ADADAD;
+        // box-shadow: 0px 0px 2px #ADADAD;
         border-radius: 5px;
         flex-grow: 1;
         margin-bottom: 10px;
