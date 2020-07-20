@@ -25,7 +25,6 @@ const products = () => {
   const productsInfos = [
     {
       name: "Air Zoom Pegasus 37",
-      brand: "Nike",
       price: "120.00",
       image: "/images/airzoom.jpg",
     },
@@ -120,7 +119,7 @@ const products = () => {
 
           <div className="product-selections">
             {productsInfos.map((productInfo, index) => (
-              <ProductsInfo product={productInfo} />
+              <ProductsInfo product={productInfo} key={index} />
             ))}
           </div>
         </div>

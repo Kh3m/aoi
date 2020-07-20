@@ -25,7 +25,7 @@ const headTop = () => {
           My Account <img src="/images/user.svg" />
         </li>
         <li>
-          <Link href="/cart">
+          <Link href="/checkout">
             <a>
               My Shopping Bag (0) <img src="/images/cart.svg" />
             </a>

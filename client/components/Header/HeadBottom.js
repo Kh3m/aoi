@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../Logo";
 import SearchBox from "../SearchBox";
-import Cart from "../Cart";
 import Navigations from "../Navigations/Navigations";
 
 const headBottom = () => {

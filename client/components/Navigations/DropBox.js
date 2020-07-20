@@ -18,7 +18,7 @@ const dropBox = (props) => {
     <div className={classList.join(" ")}>
       <ul className="nav-wrapper">
         {lists.map((list, index) => (
-          <li>
+          <li key={index}>
             <Link href={"/products"}>
               <a>{list}</a>
             </Link>

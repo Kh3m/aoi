@@ -1,0 +1,25 @@
+.Checkout {
+  width: 100%;
+  max-width: 1400px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shipping {
+  flex-basis: 58%;
+}
+.OrderSummary {
+  flex-basis: 40%;
+}
+.Total {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  margin-bottom: 20px;
+}
+.Total div {
+  display: flex;
+  margin-bottom: 10px;
+}

@@ -8,9 +8,22 @@ const cartItem = (props) => {
       <div className="product-image-wrapper">
         <img src={props.item.image} />
       </div>
-      <CartProducDescription description={props.item.description} />
+      <div>
+        <h5>{props.item.name}</h5>
+        <h4>$ {props.item.price}</h4>
+        <h5>{props.item.size}</h5>
+        <input
+          type="number"
+          value={props.quantity}
+          className="quantity"
+          defaultValue={1}
+        />
+      </div>
+
+      {/* <CartProducDescription description={props.item.description} /> */}
       <Spacer />
-      <h4 className="product-price">{props.item.price}</h4>
+
+      <h4 className="product-price">delete</h4>
 
       <style jsx>{`
         .cart-item {
@@ -19,14 +32,18 @@ const cartItem = (props) => {
           margin-bottom: 20px;
         }
         .product-image-wrapper {
-          width: 200px;
+          width: 100px;
           margin-right: 2%;
         }
         .product-image-wrapper img {
           width: 100%;
         }
         .product-price {
-          color: #b12704;
+          font-style: italic;
+        }
+        .quantity {
+          width: 60px;
+          padding: 5px;
         }
       `}</style>
     </div>
