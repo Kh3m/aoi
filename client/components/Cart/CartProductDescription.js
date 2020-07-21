@@ -3,9 +3,9 @@ import React from "react";
 const cartProducDescription = (props) => {
   return (
     <div className="product-description">
-      <h4>{props.description.name}</h4>
+      <h5>{props.description.name}</h5>
       <span>
-        <b>18</b> (Size), <b>Black</b> (Color)
+        <b>18</b> (Size)
       </span>
       <span>{props.description.category} </span>
       <ul>
@@ -32,9 +32,6 @@ const cartProducDescription = (props) => {
         .product-description > span {
           display: block;
           margin-top: 4px;
-        }
-        h4 {
-          color: #0066c0;
         }
         .product-description select {
           border-radius: 5px;

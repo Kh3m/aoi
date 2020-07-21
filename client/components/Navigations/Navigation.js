@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import DropBox from "./DropBox";
 
-const navigation = props => {
-  const { title, categories } = props.target;
+const navigation = (props) => {
+  const { title, list } = props.target;
 
   const [dropBoxState, setDropBoxState] = useState(false);
 
@@ -15,14 +15,13 @@ const navigation = props => {
       <Link href={"/products"}>
         <a>{title}</a>
       </Link>
-      <DropBox categories={categories} show={dropBoxState} />
+      <DropBox list={list} show={dropBoxState} />
 
       <style jsx>{`
         li {
-          padding: 30px 30px;
-          position: relative;
-          cursor: pointer;
-          background-image: url("/images/download.svg");
+          padding: 10px 30px 20px 30px;
+          // cursor: pointer;
+          // background-image: url("/images/download.svg");
           background-position: right 10px center;
           background-repeat: no-repeat;
           background-size: 10px;
@@ -32,7 +31,8 @@ const navigation = props => {
         }
         a {
           text-decoration: none;
-          color: #035d59;
+          color: #18192b;
+          font-weight: bold;
         }
       `}</style>
     </li>

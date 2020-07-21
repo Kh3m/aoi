@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const category = props => {
+const category = (props) => {
   const { title, list } = props.category;
   return (
     <div className="category">

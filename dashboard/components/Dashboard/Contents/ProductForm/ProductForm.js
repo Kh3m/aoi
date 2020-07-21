@@ -7,11 +7,11 @@ import Button from "../../../UI/Button/Button";
 class ProductForm extends Component {
   state = {
     productForm: {
-      title: {
+      name: {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "Product Title",
+          placeholder: "Product Name",
         },
         value: "",
       },
@@ -31,32 +31,6 @@ class ProductForm extends Component {
         },
         value: "",
       },
-
-      colors: {
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          placeholder: "Color",
-        },
-        value: "",
-      },
-
-      material: {
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          placeholder: "Product Material",
-        },
-        value: "",
-      },
-      feature: {
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          placeholder: "Product Feature",
-        },
-        value: "",
-      },
       category: {
         elementType: "select",
         elementConfig: {
@@ -65,19 +39,6 @@ class ProductForm extends Component {
             { value: "men", displayValue: "Men" },
             { value: "women", displayValue: "Women" },
             { value: "kids", displayValue: "Kids" },
-          ],
-        },
-        value: "",
-      },
-
-      subCategory: {
-        elementType: "select",
-        elementConfig: {
-          options: [
-            { value: "null", displayValue: "---Select Sub-Category---" },
-            { value: "shoes", displayValue: "Shoes" },
-            { value: "women", displayValue: "Women" },
-            { value: "Kids", displayValue: "Kids" },
           ],
         },
         value: "",
@@ -92,6 +53,14 @@ class ProductForm extends Component {
             { value: "clarks", displayValue: "Clarks" },
             { value: "Gucci", displayValue: "Gucci" },
           ],
+        },
+        value: "",
+      },
+      images: {
+        elementType: "input",
+        elementConfig: {
+          type: "file",
+          placeholder: "Product images",
         },
         value: "",
       },

@@ -16,8 +16,8 @@ const footer = () => {
         "Clogs",
         "Slippers",
         "New Arrivals",
-        "View all"
-      ]
+        "View all",
+      ],
     },
 
     {
@@ -27,20 +27,20 @@ const footer = () => {
         "Help center",
         "Billing Information",
         "My Account",
-        "Shipping & Returns"
-      ]
+        "Shipping & Returns",
+      ],
     },
 
     {
       title: "About Austin",
-      list: ["Contact us", "Customers Reviews", "Autin Benefits", "About us"]
-    }
+      list: ["Contact us", "Customers Reviews", "Autin Benefits", "About us"],
+    },
   ];
   return (
     <div className="footer-wrapper">
       <div className="footer">
         {categories.map((category, index) => (
-          <Category category={category} />
+          <Category key={index} category={category} />
         ))}
         <div>
           <h3>Connect With Us</h3>

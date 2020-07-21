@@ -19,7 +19,7 @@ const logo = () => {
           font-weight: 700;
         }
         .red {
-          color: #f13c31;
+          color: #0654b3;
         }
       `}</style>
     </div>

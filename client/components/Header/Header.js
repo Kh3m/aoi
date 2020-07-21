@@ -10,12 +10,16 @@ const header = () => {
       <div className="header">
         <HeadTop />
         <HeadBottom />
-        <Navigations />
+        {/* <Navigations /> */}
         <style jsx>{`
           .header {
             width: 100%;
-            height: 200px;
-            //background-color: #eee;
+            background-color: #fff;
+            position: fixed;
+            z-index: 90;
+            left: 0;
+            top: 0;
+            border-bottom: 1px solid #eeeeef;
           }
         `}</style>
       </div>

@@ -14,12 +14,13 @@ const logo = () => {
 
       <style jsx>{`
         .logo h2 {
-          color: white;
+          color: #1b222b;
           font-family: "Open sans", san-serif;
           font-weight: 700;
+          color: white;
         }
         .red {
-          color: #f13c31;
+          color: #0654b3;
         }
       `}</style>
     </div>
