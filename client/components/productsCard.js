@@ -26,7 +26,7 @@ const productsCard = (props) => {
         }
         .view-card {
           width: 100%;
-          max-width: 1200px;
+          padding: 0 3%;
           margin: 50px auto 0px auto;
         }
 

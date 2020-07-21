@@ -39,7 +39,7 @@ const headTop = () => {
         .header-top {
           width: 100%;
           height: 40px;
-          padding: 0px 20px;
+          padding: 0px 3%;
           background-color: #24272b;
           color: white;
           display: flex;

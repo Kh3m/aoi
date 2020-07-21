@@ -15,8 +15,8 @@ const headBottom = () => {
       <style jsx>{`
         .header-bottom {
           width: 100%;
-          max-width: 1400px;
           margin: 0px auto;
+          padding: 0 3%;
           height: 100px;
           display: flex;
           align-items: center;

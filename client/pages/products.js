@@ -129,7 +129,7 @@ const products = () => {
       <style jsx>{`
         .products {
           width: 100%;
-          max-width: 1400px;
+          padding: 0 3%;
           margin: 30px auto 0px auto;
         }
 

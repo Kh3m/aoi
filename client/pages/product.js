@@ -43,7 +43,7 @@ const product = () => {
       <style jsx>{`
         .product {
           width: 100%;
-          max-width: 1400px;
+          padding: 0 3%;
           margin: 50px auto;
           position: relative;
         }

@@ -83,12 +83,11 @@ const footer = () => {
         }
         .footer {
           width: 100%;
-          max-width: 1200px;
           min-height: 500px;
           margin: 50px auto 0 auto;
           display: flex;
           justify-content: space-between;
-          padding: 50px 0px 50px 0px;
+          padding: 50px 3% 50px 3%;
           color: #cbcdcf;
         }
         .socials {
