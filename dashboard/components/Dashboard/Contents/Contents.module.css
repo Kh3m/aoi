@@ -1,6 +1,6 @@
 .Contents {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   padding-top: 64px;
   background-color: #fefefe;
@@ -17,7 +17,7 @@
 }
 .MainContents {
   width: 80%;
-  height: 800px;
   padding: 15px 30px;
   background-color: #f2f5fa;
+  overflow: visible;
 }
