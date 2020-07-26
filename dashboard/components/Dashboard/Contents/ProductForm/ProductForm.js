@@ -23,11 +23,27 @@ class ProductForm extends Component {
         },
         value: "",
       },
-      size: {
+      sizes: {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "Size",
+          placeholder: "Sizes",
+        },
+        value: "",
+      },
+      colors: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Colors",
+        },
+        value: "",
+      },
+      quantity: {
+        elementType: "input",
+        elementConfig: {
+          type: "number",
+          placeholder: "Quantity",
         },
         value: "",
       },
