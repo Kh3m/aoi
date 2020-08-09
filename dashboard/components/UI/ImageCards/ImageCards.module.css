@@ -1,0 +1,13 @@
+
+.ProductImage {
+    width: 200px;
+}
+
+.ProductImage img {
+    width: 100%;
+}
+
+.ProductImageContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
