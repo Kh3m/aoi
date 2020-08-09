@@ -1,22 +1,30 @@
+const Product = require("../../models/product");
 
-exports.createProduct = ( args, req) => {
+exports.createProduct = async ( args, req) => {
+    // destructure data from args
+    const { data } = args;
+    // create new product
+    const newProduct = new Product({ ...data });
+    // save the product to db
+    const product = await newProduct.save();
 
-    console.log(JSON.stringify({args}, null, 2));
-
+    // return the product that was created
     return {
-        productId: "6748ur",
-        title: "My First Product",
-        description: "I Love this product",
-        price: 12.23,
-        sizes: [17.3, 23.2],
-        colors: ["red", "blue"],
-        image_urls: [
-            "http://localhost:3300/uploads/avatar_1593349658719_IMG-20200606-WA0017.jpg",
-            "http://localhost:3300/uploads/products_1593349390260_DSC_2904.JPG"
-        ],
-        quantity: 16,
-        feature: "Makes sense",
-        material: "Leather",
-        brands: "Gucci"
+        productId: product._id,
+        product_name: product.product_name,
+        description: product.description,
+        price: product.price,
+        sizes: product.sizes,
+        colors: product.colors,
+        image_urls: product.image_urls,
+        quantity: product.quantity,
+        brands: product.brand,
+        reviews: product.reviews,
+        category: product.category,
+        orders: product.orders,
+        carts: product.carts,
+        createdAt: product.createdAt,
+        updatedAt: product.updatedAt,
+        in_stock: !!product.quantity 
     }
 }
