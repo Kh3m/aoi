@@ -29,7 +29,7 @@ const dropBox = (props) => {
       <style jsx>{`
         .drop-box {
           width: 100%;
-          padding: 50px;
+          padding: 30px;
           background-color: #eee;
           position: absolute;
           top: 115px;

@@ -8,8 +8,7 @@ const heroBox = () => {
 
       <style jsx>{`
         .banner-box {
-          width: 100%;
-          max-width: 1200px;
+          width: 94%;
           margin: 20px auto;
           position: relative;
         }
