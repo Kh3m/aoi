@@ -2,7 +2,14 @@ import React, { Component } from "react";
 
 import classes from "./productForm.module.css";
 import Input from "../../../UI/Input/Input";
+import InputImage from "../../../UI/Input/InputImage";
 import Button from "../../../UI/Button/Button";
+import ImageCards from "../../../UI/ImageCards/ImageCards";
+import { BASE_URL } from "../../../../lib/requests";
+
+// lib
+import Product from "../../../../lib/http/products";
+
 
 class ProductForm extends Component {
   state = {
@@ -23,6 +30,14 @@ class ProductForm extends Component {
         },
         value: "",
       },
+      quantity: {
+        elementType: "input",
+        elementConfig: {
+          type: "number",
+          placeholder: "Quantity",
+        },
+        value: "",
+      },
       sizes: {
         elementType: "input",
         elementConfig: {
@@ -39,15 +54,6 @@ class ProductForm extends Component {
         },
         value: "",
       },
-      quantity: {
-        elementType: "input",
-        elementConfig: {
-          type: "number",
-          placeholder: "Quantity",
-        },
-        value: "",
-      },
-
       category: {
         elementType: "select",
         elementConfig: {
@@ -60,7 +66,6 @@ class ProductForm extends Component {
         },
         value: "",
       },
-
       brand: {
         elementType: "select",
         elementConfig: {
@@ -73,14 +78,6 @@ class ProductForm extends Component {
         },
         value: "",
       },
-      images: {
-        elementType: "input",
-        elementConfig: {
-          type: "file",
-          placeholder: "Product images",
-        },
-        value: "",
-      },
       description: {
         elementType: "textarea",
         elementConfig: {
@@ -89,6 +86,8 @@ class ProductForm extends Component {
         value: "",
       },
     },
+
+    image_urls: []
   };
   //Input Change Handler
   inputChangeHandler = (event, inputIdentifier) => {
@@ -99,20 +98,63 @@ class ProductForm extends Component {
     this.setState({ productForm: updatedProductForm });
   };
 
+  // File Change Handler
+  onFileChangeHandler = ( event ) => {
+    const formData = new FormData();
+    formData.append("productImages", event.target.files);
+    fetch(BASE_URL + "/api/uploads/products", {
+        method: "PUT",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(res => {
+        console.log(res);
+        this.setState({image_urls: res.data.imageUrls});
+    })
+    .catch(err => console.log("error", err))
+  }
+
   //Adding Product Handler
   addProductHandler = (event) => {
     event.preventDefault();
     const formData = {};
     for (let inputElementIdentifier in this.state.productForm) {
-      formData[inputElementIdentifier] = this.state.productForm[
-        inputElementIdentifier
-      ].value;
+      formData[inputElementIdentifier] = this.state.productForm[ inputElementIdentifier ].value;
     }
 
     const product = {
       productData: formData,
     };
-    console.log(product.productData);
+
+    product.productData.sizes = product.productData.sizes.split(/[;,]/img)
+    .map(v => Number.parseFloat(v));
+    product.productData.colors = product.productData.colors.split(/[;,]/img);
+
+    // destructure product data
+    const {
+      productData
+    } = product;
+
+    // check the state of product form (add / update)
+    if(this.props.title === "Update Product") {
+      console.log("Update Product", productData);
+    } else {
+      console.log("Add Product", productData);
+      // Create and save new product
+      const newProduct = new Product( 
+        productData.name, 
+        productData.description, 
+        Number.parseFloat(productData.price), 
+        ["productData.image_urls"], 
+        Number.parseInt(productData.quantity), 
+        productData.category,
+        productData.colors,
+        productData.sizes,
+        productData.brand
+      );
+
+      newProduct.sendSaveRequest();
+    }   
   };
   render() {
     let search = null;
@@ -140,7 +182,6 @@ class ProductForm extends Component {
           <h2>{this.props.title}</h2>
           {search}
           <form>
-            {/* {this.props.type == "Update Product" ? <} */}
             {formElementArray.map((formElement, index) => (
               <Input
                 key={formElement.id}
@@ -152,7 +193,8 @@ class ProductForm extends Component {
                 }
               />
             ))}
-
+            <InputImage change={this.onFileChangeHandler}/>
+            <ImageCards image_urls={this.state.image_urls} />
             <Button clicked={this.addProductHandler}>Add Product</Button>
           </form>
         </div>

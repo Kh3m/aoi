@@ -9,7 +9,7 @@ const links = [
   },
 
   {
-    title: "Product",
+    title: "Add Product",
     icon: "/images/plus.png",
     type: "addProduct",
   },
