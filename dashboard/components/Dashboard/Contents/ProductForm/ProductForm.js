@@ -10,6 +10,68 @@ import { BASE_URL } from "../../../../lib/requests";
 // lib
 import Product from "../../../../lib/http/products";
 
+const productList = [
+  {
+    name: "Air Zoom Pegasus 37",
+    price: 120.0,
+    image: "/images/airzoom.jpg",
+    quantity: 10,
+    category: "Men",
+    colors: ["white", "blue", "red"],
+    sizes: ["39", "40", "42"],
+    brand: "Addidas",
+  },
+  {
+    name: "Libron Whitness",
+    brand: "Nike",
+    price: "57.33",
+    image: "/images/running.jpg",
+    quantity: 10,
+    category: "Men",
+    colors: ["white", "blue", "red"],
+    sizes: ["39", "40", "42"],
+  },
+  {
+    name: "Flex Experience Run 9",
+    brand: "Nike",
+    price: "65.00",
+    image: "/images/flex.jpg",
+    quantity: 10,
+    category: "Men",
+    colors: ["white", "blue", "red"],
+    sizes: ["39", "40", "42"],
+  },
+  {
+    name: "Cloudfeel Knit Slip-On Sneaker",
+    brand: "Cole Haan",
+    price: "100.00",
+    image: "/images/cloudfeel.jpg",
+    quantity: 10,
+    category: "Men",
+    colors: ["white", "blue", "red"],
+    sizes: ["39", "40", "42"],
+  },
+  {
+    name: "Revolution 5",
+    brand: "Nike",
+    price: "65.00",
+    image: "/images/revolution.jpg",
+    quantity: 10,
+    category: "Men",
+    colors: ["white", "blue", "red"],
+    sizes: ["39", "40", "42"],
+  },
+  {
+    name: "Cloudfeel Knit Slip-On Sneaker",
+    brand: "Cole Haan",
+    price: "100.00",
+    image: "/images/cloudfeel.jpg",
+    quantity: 10,
+    category: "Men",
+    colors: ["white", "blue", "red"],
+    sizes: ["39", "40", "42"],
+  },
+];
 
 class ProductForm extends Component {
   state = {
@@ -87,7 +149,7 @@ class ProductForm extends Component {
       },
     },
 
-    image_urls: []
+    image_urls: [],
   };
   //Input Change Handler
   inputChangeHandler = (event, inputIdentifier) => {
@@ -99,54 +161,55 @@ class ProductForm extends Component {
   };
 
   // File Change Handler
-  onFileChangeHandler = ( event ) => {
+  onFileChangeHandler = (event) => {
     const formData = new FormData();
     formData.append("productImages", event.target.files);
     fetch(BASE_URL + "/api/uploads/products", {
-        method: "PUT",
-        body: formData
+      method: "PUT",
+      body: formData,
     })
-    .then(res => res.json())
-    .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         console.log(res);
-        this.setState({image_urls: res.data.imageUrls});
-    })
-    .catch(err => console.log("error", err))
-  }
+        this.setState({ image_urls: res.data.imageUrls });
+      })
+      .catch((err) => console.log("error", err));
+  };
 
   //Adding Product Handler
   addProductHandler = (event) => {
     event.preventDefault();
     const formData = {};
     for (let inputElementIdentifier in this.state.productForm) {
-      formData[inputElementIdentifier] = this.state.productForm[ inputElementIdentifier ].value;
+      formData[inputElementIdentifier] = this.state.productForm[
+        inputElementIdentifier
+      ].value;
     }
 
     const product = {
       productData: formData,
     };
 
-    product.productData.sizes = product.productData.sizes.split(/[;,]/img)
-    .map(v => Number.parseFloat(v));
-    product.productData.colors = product.productData.colors.split(/[;,]/img);
+    product.productData.sizes = product.productData.sizes
+      .split(/[;,]/gim)
+      .map((v) => Number.parseFloat(v));
+    product.productData.colors = product.productData.colors.split(/[;,]/gim);
 
     // destructure product data
-    const {
-      productData
-    } = product;
+    const { productData } = product;
 
     // check the state of product form (add / update)
-    if(this.props.title === "Update Product") {
+    if (this.props.title === "Update Product") {
       console.log("Update Product", productData);
     } else {
       console.log("Add Product", productData);
       // Create and save new product
-      const newProduct = new Product( 
-        productData.name, 
-        productData.description, 
-        Number.parseFloat(productData.price), 
-        ["productData.image_urls"], 
-        Number.parseInt(productData.quantity), 
+      const newProduct = new Product(
+        productData.name,
+        productData.description,
+        Number.parseFloat(productData.price),
+        ["productData.image_urls"],
+        Number.parseInt(productData.quantity),
         productData.category,
         productData.colors,
         productData.sizes,
@@ -154,7 +217,7 @@ class ProductForm extends Component {
       );
 
       newProduct.sendSaveRequest();
-    }   
+    }
   };
   render() {
     let search = null;
@@ -193,9 +256,9 @@ class ProductForm extends Component {
                 }
               />
             ))}
-            <InputImage change={this.onFileChangeHandler}/>
+            <InputImage change={this.onFileChangeHandler} />
             <ImageCards image_urls={this.state.image_urls} />
-            <Button clicked={this.addProductHandler}>Add Product</Button>
+            <Button clicked={this.addProductHandler}>{this.props.title}</Button>
           </form>
         </div>
       </div>

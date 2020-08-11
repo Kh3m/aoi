@@ -1,0 +1,19 @@
+.Product {
+}
+
+.Product img {
+  width: 150px;
+}
+
+.Action * {
+  display: block;
+  margin: auto;
+}
+
+.Delete {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
