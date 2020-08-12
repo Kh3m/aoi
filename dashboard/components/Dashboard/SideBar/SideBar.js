@@ -9,20 +9,14 @@ const links = [
   },
 
   {
-    title: "Add Product",
+    title: "Product",
     icon: "/images/plus.png",
-    type: "addProduct",
-  },
-
-  {
-    title: "Update Product",
-    icon: "/images/list.png",
-    type: "updateProduct",
+    type: "product",
   },
 
   {
     title: "Carousel",
-    icon: "/images/edit.png",
+    // icon: "/images/edit.png",
     type: "carousel",
   },
 
@@ -49,7 +43,7 @@ const sideBar = (props) => {
         <ul className={classes.sideNav}>
           {links.map((nav, index) => (
             <li key={index} onClick={() => props.clicked(nav.type)}>
-              <img src={nav.icon} />
+              {/* <img src={nav.icon} /> */}
               <a href="#">{nav.title}</a>
             </li>
           ))}

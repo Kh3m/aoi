@@ -112,8 +112,8 @@ const productForm = ( props ) => {
     }
 
     fetch(BASE_URL + "/api/uploads/products", {
-        method: "PUT",
-        body: formData
+      method: "PUT",
+      body: formData,
     })
     .then(res => res.json())
     .then(res => {
@@ -134,14 +134,13 @@ const productForm = ( props ) => {
       productData: formData,
     };
 
-    product.productData.sizes = product.productData.sizes.split(/[;,]/img)
-    .map(v => Number.parseFloat(v));
-    product.productData.colors = product.productData.colors.split(/[;,]/img);
+    product.productData.sizes = product.productData.sizes
+      .split(/[;,]/gim)
+      .map((v) => Number.parseFloat(v));
+    product.productData.colors = product.productData.colors.split(/[;,]/gim);
 
     // destructure product data
-    const {
-      productData
-    } = product;
+    const { productData } = product;
 
     // check the state of product form (add / update)
     if(props.title === "Update Product") {
