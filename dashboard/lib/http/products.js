@@ -1,53 +1,46 @@
 
 import request from "../requests";
 import { addProductQuery } from "../queries/products";
+import { useState } from "react";
 
-class Product {
-    constructor (
-        product_name,
-        description,
-        price,
-        image_urls,
-        quantity,
-        category,
-        colors,
-        sizes,
-        brand=""
-    ) {
-        this.product_name = product_name;
-        this.description = description;
-        this.price = price;
-        this.image_urls = image_urls;
-        this.quantity = quantity;
-        this.category = category;
-        this.colors = colors;
-        this.sizes = sizes;
-        this.brand = brand;
-    }
-
-    async sendSaveRequest () {
-        try {
-            const res = await request(addProductQuery(
-                this.product_name,
-                this.description,
-                this.price,
-                this.image_urls,
-                this.quantity,
-                this.category,
-                this.colors,
-                this.sizes,
-                this.brand
-            ));
-            
-            console.log("add product res", res);
-        } catch (err) {
-            console.log("Something went wrong", err);
+const useProductHttp = () => {
+        const [productLoading, setProductLoading] = useState(false);
+        const sendSaveRequest = async (
+            product_name,
+            description,
+            price,
+            image_urls,
+            quantity,
+            category,
+            colors,
+            sizes,
+            brand=""
+        ) => {
+            try {
+                setProductLoading(true);
+                const res = await request(addProductQuery(
+                    product_name,
+                    description,
+                    price,
+                    image_urls,
+                    quantity,
+                    category,
+                    colors,
+                    sizes,
+                    brand
+                ));
+                console.log("product res", res);
+                setProductLoading(false);                
+            } catch (err) {
+                console.log("Something went wrong", err);
+                setProductLoading(false); 
+            }
         }
-    }
 
-    async sendFindRequest () {
-
-    }
+        return {
+            productLoading,
+            sendSaveRequest            
+        }
 }
 
-export default Product;
+export default useProductHttp;
