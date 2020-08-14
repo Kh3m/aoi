@@ -12,7 +12,7 @@ exports.productDeclaration = `
     }
 
     type Product {
-        productId: ID!
+        _id: ID!
         product_name: String!
         description: String!
         price: Float!
@@ -29,13 +29,20 @@ exports.productDeclaration = `
         updatedAt: String
         in_stock: Boolean
     }
+
+    input QueryInput {
+        limit: Int,
+        sortBy: String
+    }
 `
 
 exports.productMutation = `
-    createProduct(data: ProductInput): Product!
+    createProduct(data: ProductInput!): Product!
+    delete(_id: ID!): Product!
+    update(_id: ID!, data: ProductInput!): Product!
 `
 
 exports.productQuery = `
     product(productId: ID!): Product!
-    products: Product!
+    products(query: QueryInput): [Product!]
 `

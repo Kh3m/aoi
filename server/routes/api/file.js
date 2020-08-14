@@ -30,6 +30,7 @@ router.put("/api/uploads/products", productUploads.array("products"), (req, res)
 
 // Serve image to client
 router.get("/uploads/:filename", async (req, res) => {
+    console.log("===== filename ======", req.params.filename)
     // "fieldname_time_originalname"
     // take only the fieldname which is the bucketName
     const bucketName = req.params.filename.split("_")[0];
